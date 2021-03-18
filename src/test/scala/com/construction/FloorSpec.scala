@@ -17,7 +17,9 @@ class FloorSpec extends FlatSpec with MockitoSugar {
     assertResult(9) {
       mockFloor.foo1(n)
     }
-    assert(mockFloor.door === null)
+    assertResult(null) {
+      mockFloor.door
+    }
   }
 
   "Foo2 Spec " should "calculate" in {
@@ -40,7 +42,9 @@ class FloorSpec extends FlatSpec with MockitoSugar {
       }.getMessage
     }
 
-    assert(mockFloor.door === null)
+    assertResult(null) {
+      mockFloor.door
+    }
   }
 
   "Foo3 Spec " should "calculate" in {
@@ -53,7 +57,9 @@ class FloorSpec extends FlatSpec with MockitoSugar {
       mockFloor.foo3(s)
     }
 
-    assert(mockFloor.door.equals(s))
+    assertResult(s) {
+      mockFloor.door
+    }
   }
 
 }
